@@ -1,10 +1,10 @@
 {
   "name": "psqldef-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node js cli wrapper around psqldef",
   "main": "./bin/cli.js",
   "bin": {
-    "task": "./bin/cli.js"
+    "psqldef": "./bin/cli.js"
   },
   "repository": {
     "type": "git",
