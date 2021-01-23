@@ -10,16 +10,16 @@ const rm = promisify(fs.rm)
 const move = promisify(fs.rename)
 
 const platform = os.platform()
-const url = 'https://github.com/go-task/task/releases/latest/download/'
+const url = 'https://github.com/k0kubun/sqldef/releases/latest/download/'
 const binaries = {
-   darwin: 'task_darwin_amd64.tar.gz',
-   linux: 'task_linux_amd64.tar.gz',
-   win32: 'task_windows_amd64.tar.gz'
+   darwin: 'psqldef_darwin_amd64.tar.gz',
+   linux: 'psqldef_linux_amd64.tar.gz',
+   win32: 'psqldef_windows_amd64.tar.gz'
 }
 
 const install = async () => {
   try {
-      console.log('attempting to install taskfile.dev')
+      console.log('attempting to install psqldef')
       const file = binaries[platform]
       const resp = await axios.request({
           url: url + file,
@@ -32,12 +32,12 @@ const install = async () => {
               file,
           })
           await rm(file)
-          await move(path.join(__dirname, 'task'), path.join(__dirname, 'bin', 'task'))
+          await move(path.join(__dirname, 'psqldef'), path.join(__dirname, 'bin', 'psqldef'))
 
       })
   } catch (error) {
-        console.error(`failed to install taskfile.dev ${error}`)
+        console.error(`failed to install psqldef ${error}`)
   }
 }
 
-install().then(() => console.log('taskfile.dev installed successfully')).catch((err) => console.error(`failed to install ${err}`))
+install().then(() => console.log('psqldef installed successfully')).catch((err) => console.error(`failed to install ${err}`))
