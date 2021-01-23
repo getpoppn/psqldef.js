@@ -1,0 +1,39 @@
+{
+  "name": "psqldef-js",
+  "version": "1.0.0",
+  "description": "A node js cli wrapper around psqldef",
+  "main": "./bin/cli.js",
+  "bin": {
+    "task": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getpoppn/Taskfile.js.git"
+  },
+  "homepage": "https://github.com/getpoppn/Taskfile.js",
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "keywords": [
+    "task runner",
+    "task",
+    "npm",
+    "scripts",
+    "automation",
+    "typescript"
+  ],
+  "scripts": {
+    "postinstall": "node install.js"
+  },
+  "author": "Gary Becks <techstar.dev@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "tar": "^6.1.0"
+  }
+}
